@@ -5,7 +5,7 @@
 For this project, we used the 2016 Muse Headset and the sample TestLibMuseAndroid app, which you can find 
 [here](http://developer.choosemuse.com/sdk/android/getting-started-with-libmuse-android). Follow the guide to download Android Studio and run the app on your Android device. Make sure the Muse headset is on (the light should be on but not solid) and press refresh in the app. Once the device shows up, select it and press connect. Note that you should not connect the Muse headset directly to your phone via bluetooth connection; the app does that for you.
 
-### Setting Up Firebase
+##### Setting Up Firebase
 Go to the [Firebase website](firebase.google.com) and set up your own Firebase Realtime Database. Near the top, you will see a link with the format https://example.firebaseio.com/. This is the hostname of the realtime database, and you will need it later to connect your Wifi module to Firebase. Under data, add a child with value false. We decided to call the child corresponding to our device LED1 and nested it under a child called devices. 
 
 ##### Modifying the Muse App
@@ -33,5 +33,16 @@ private void determineDeviceState(double [] aBuffer, double aThreshold)
    }
 }
 ```
-After that, all you need to do is call the function under `case ALPHA_RELATIVE:` in `receiveMuseDataPacket`: `determineDeviceStatement(alphaBuffer, threshold)`, where `threshold` is a double between 0 and 1. We chose 0.2 as our threshold, but you can adjust it depending on how responsive you want your devices to be.
+After that, all you need to do is call the function:
+
+```
+case ALPHA_RELATIVE:
+   assert(alphaBuffer.length >= n);
+   getEegChannelValues(alphaBuffer,p);
+   **determineDeviceState(alphaBuffer, 0.20);**
+   alphaStale = true;
+   break;
+```
+
+where `threshold` is a double between 0 and 1. We chose 0.2 as our threshold, but you can adjust it depending on how responsive you want your devices to be.
 
