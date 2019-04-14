@@ -103,5 +103,5 @@ Replace `HOSTNAME` with the hostname that you found earlier, but remove the `htt
 For the breadboard, all you will need is the NodeMCU, an LED attached to pin D6, and a resistor, which is connected to the LED on one end and grounded on the other. 
 
 #### Testing the System
-Everything should now be properly set up. Connect the Muse headset to the app, make sure the Arduino is connected to Firebase (through the serial monitor), and try to relax. Once the threshold is passed, the LED should light up, and it should turn off when you start concentrating again. Now you have an understanding of how to control devices using EEG signals and IoT technology. 
+Everything should now be properly set up. Connect the Muse headset to the app, make sure the Arduino is connected to Firebase (through the serial monitor), and try to relax. Once the threshold is passed, the LED should light up, and it should turn off when you start concentrating again. Now you have an understanding of how to use IoT technology and EEG signals to control devices!
 
