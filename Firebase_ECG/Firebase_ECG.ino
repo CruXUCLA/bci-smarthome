@@ -1,13 +1,13 @@
 #include <ESP8266WiFi.h>
 #include <FirebaseArduino.h>
 
-#define FIREBASE_HOST "cruxdemo-ff359.firebaseio.com"
-#define FIREBASE_AUTH "kwzhEiKL8LwBj17vLZGcmn01PvqLWOyO80HFFOBM"
-#define WIFI_SSID "Samsung Galaxy S9+_6807"
-#define WIFI_PASSWORD "cruxucla"
+#define FIREBASE_HOST "HOSTNAME"
+#define FIREBASE_AUTH "SECRET KEY"
+#define WIFI_SSID "SSID"
+#define WIFI_PASSWORD "PASSWORD"
 
-#define path "/light1/OnOff"
-
+#define path "/devices/LED1"
+  
 const int LED = 12; // Pin D6
 
 void setup() {
