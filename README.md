@@ -1,11 +1,11 @@
 # Lit Synaptix
 
-### Project Overview
+## Project Overview
 The goal of this project was to use alpha waves to turn an LED light on and off. This project acts as a proof of concept for creating an ecosystem of household appliances controlled by the user’s brainwaves. This can be achieved through existing APIs and technologies, making this concept viable for consumer use. In our prototype, the LED light reacts to the alpha relative values, which is dependent on whether the user is in a meditative state. 
 
 We decided to use the Muse headset for its readily accessible SDK, which woud allow us to focus more on data processing rather than data acquisition for our first time working with EEGs, and the Google Firebase API to communicate between the LED and the Muse because it is relatively easy to set up and use.
 
-### Putting the Project Together
+## Putting the Project Together
 #### Setting up the Muse Headset
 For this project, we used the 2016 Muse Headset and the sample TestLibMuseAndroid app, which you can find 
 [here](http://developer.choosemuse.com/sdk/android/getting-started-with-libmuse-android). Follow the guide to download Android Studio and run the app on your Android device. Make sure the Muse headset is on (the light should be on but not solid) and press refresh in the app. Once the device shows up, select it and press connect. Note that you should not connect the Muse headset directly to your phone via bluetooth connection; the app does that for you.
@@ -110,5 +110,5 @@ For the breadboard, all you will need is the NodeMCU, an LED attached to pin D6,
 #### Testing the System
 Everything should now be properly set up. Connect the Muse headset to the app, make sure the Arduino is connected to Firebase (check through the serial monitor), and try to relax. Once the threshold is passed, the LED should light up, and it should turn off when you start concentrating again. Now you have an understanding of how to use IoT technology and EEG signals to control devices!
 
-### Conclusion
+## Conclusion
 Our first experience with working with neurotechnology was a very rewarding experience. Along with learning about how EEGs work, we gained valuable skills in developing Android applications, working with APIs, and using IoT devices. As we look to the future, we have many new ideas on what to work on. Because this project was a proof of concept of working with IoT devices, we could integrate this system with consumer appliances, such as Phillips Hue lightbulbs and TVs using the Chromecast API. We could also analyze other types of brainwaves and see how different combinations of brainwaves indicate different states of mind and have devices react in different ways depending on those states.
