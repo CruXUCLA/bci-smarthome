@@ -34,13 +34,13 @@ private void determineDeviceState(double [] aBuffer, double aThreshold)
    }
 }
 ```
-After that, all you need to do is call the function:
+After that, all you need to do is call the function as shown:
 
 ```
 case ALPHA_RELATIVE:
    assert(alphaBuffer.length >= n);
    getEegChannelValues(alphaBuffer,p);
-   **determineDeviceState(alphaBuffer, threshold);**
+   determineDeviceState(alphaBuffer, threshold);
    alphaStale = true;
    break;
 ```
