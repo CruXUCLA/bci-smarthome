@@ -1,5 +1,10 @@
 # Lit Synaptix
 
+### Project Overview
+The goal of this project was to use alpha waves to turn an LED light on and off. This project acts as a proof of concept for creating an ecosystem of household appliances controlled by the user’s brainwaves. This can be achieved through existing APIs and technologies, making this concept viable for consumer use. In our prototype, the LED light reacts to the alpha relative values, which is dependent on whether the user is in a meditative state. 
+
+We decided to use the Muse headset for its readily accessible SDK, which woud allow us to focus more on data processing rather than data acquisition for our first time working with EEGs, and the Google Firebase API to communicate between the LED and the Muse because it is relatively easy to set up and use.
+
 ### The Process
 #### Setting up the Muse Headset
 For this project, we used the 2016 Muse Headset and the sample TestLibMuseAndroid app, which you can find 
