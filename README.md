@@ -47,3 +47,6 @@ case ALPHA_RELATIVE:
 
 Note: `threshold` is a double between 0 and 1. We chose 0.2 as our threshold, but you can adjust it depending on how responsive you want your devices to be.
 
+##### Setting Up Your Circuit
+For the circuit we chose to use an [ESP8266 NodeMCU microcontroller](https://www.amazon.com/gp/product/B010N1SPRK/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) because it had the Wifi module built in, which eliminated for the need for a logic level converter between an Arduino and the ESP8266 Wifi module. The NodeMCU can be programmed using the [Arduino IDE](https://www.arduino.cc/en/main/software) if the [driver](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) is installed. You will also need to install the 
+[FirebaseArduino library](https://github.com/FirebaseExtended/firebase-arduino/tree/master/examples/FirebaseDemo_ESP8266) and the [ArduinoJson library](https://www.arduinolibraries.info/libraries/arduino-json). For ArduinoJson, we could not get version 6 to work with FirebaseArduino, so we used ArduinoJson 5.13.5. You will also need to install the Arduino core for the ESP8266 chip, so follow this [tutorial](https://github.com/esp8266/Arduino#installing-with-boards-manager). 
