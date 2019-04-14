@@ -98,7 +98,7 @@ void loop() {
   }
 }
 ```
-Replace `HOSTNAME` with the hostname that you found earlier, but remove the `https://` at the front and the `/` at the end. For example, if your hostname was `https://example.firebaseio.com/`, you should put `example.firebaseio.com`. For `SECRET KEY`, you will have to go your `Firebase > Project Settings > Service Accounts > Database Secrets` and copy the secret key found there. For SSID and PASSWORD, put the name of your Wifi network and the password. You should modify `path` so that it matches how you organized your database, starting with a `/` and listing every child. 
+Replace `HOSTNAME` with the hostname that you found earlier, but remove the `https://` at the front and the `/` at the end. For example, if your hostname was `https://example.firebaseio.com/`, you should put `example.firebaseio.com`. For `SECRET KEY`, you will have to go your `Firebase > Project Settings > Service Accounts > Database Secrets` and copy the secret key found there. For `SSID` and `PASSWORD`, put the name of your Wifi network and the password. You should modify `path` so that it matches how you organized your database, starting with a "/" and listing every child. 
 
 For the breadboard, all you will need is the NodeMCU, an LED attached to pin D6, and a resistor, which is connected to the LED on one end and grounded on the other. 
 
