@@ -5,7 +5,7 @@ The goal of this project was to use alpha waves to turn an LED light on and off.
 
 We decided to use the Muse headset for its readily accessible SDK, which woud allow us to focus more on data processing rather than data acquisition for our first time working with EEGs, and the Google Firebase API to communicate between the LED and the Muse because it is relatively easy to set up and use.
 
-### The Process
+### Putting the Project Together
 #### Setting up the Muse Headset
 For this project, we used the 2016 Muse Headset and the sample TestLibMuseAndroid app, which you can find 
 [here](http://developer.choosemuse.com/sdk/android/getting-started-with-libmuse-android). Follow the guide to download Android Studio and run the app on your Android device. Make sure the Muse headset is on (the light should be on but not solid) and press refresh in the app. Once the device shows up, select it and press connect. Note that you should not connect the Muse headset directly to your phone via bluetooth connection; the app does that for you.
