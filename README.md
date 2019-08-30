@@ -5,15 +5,15 @@ The goal of this project was to use alpha waves to turn an LED light on and off.
 
 We decided to use the Muse headset for its readily accessible SDK, which woud allow us to focus more on data processing rather than data acquisition for our first time working with EEGs, and the Google Firebase API to communicate between the LED and the Muse because it is relatively easy to set up and use.
 
-## Putting the Project Together
-#### Setting up the Muse Headset
+## Project Setup
+#### Setting up the Muse EEG Headset
 For this project, we used the 2016 Muse Headset and the sample TestLibMuseAndroid app, which you can find 
 [here](http://developer.choosemuse.com/sdk/android/getting-started-with-libmuse-android). Follow the guide to download Android Studio and run the app on your Android device. Make sure the Muse headset is on (the light should be on but not solid) and press refresh in the app. Once the device shows up, select it and press connect. Note that you should not connect the Muse headset directly to your phone via bluetooth connection; the app does that for you.
 
 #### Setting Up Firebase
 Go to the [Firebase website](firebase.google.com) and set up your own Firebase Realtime Database. Near the top, you will see a link with the format https://example.firebaseio.com/. This is the hostname of the realtime database, and you will need it later to connect your Wifi module to Firebase. Under data, add a child with value false. We decided to call the child corresponding to our device `LED1` and nested it under a child called `devices`. 
 
-#### Modifying the Muse App
+#### Integrating Firebase to the Muse App
 The first thing that you will need to do is connect your app to Firebase. In Android Studio, go to Tools > Firebase > Realtime Database and follow the instructions there to connect your app to Firebase. Once the app has been connected, add the following lines to the top of `MainActivity`.
 
 ```
@@ -39,7 +39,7 @@ private void determineDeviceState(double [] aBuffer, double aThreshold)
    }
 }
 ```
-After that, all you need to do is call the function as shown:
+After that, call the function as shown:
 
 ```
 case ALPHA_RELATIVE:
@@ -50,7 +50,7 @@ case ALPHA_RELATIVE:
    break;
 ```
 
-Note: `threshold` is a double between 0 and 1. We chose 0.2 as our threshold, but you can adjust it depending on how responsive you want your devices to be.
+Note: `threshold` is a double between 0 and 1. We chose 0.2 as our threshold, but you can adjust this value depending on how responsive you want your devices to be.
 
 #### Setting Up Your Circuit
 For the circuit we chose to use an [ESP8266 NodeMCU microcontroller](https://www.amazon.com/gp/product/B010N1SPRK/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) because it had the Wifi module built in, which eliminated for the need for a logic level converter between an Arduino and the ESP8266 Wifi module. The NodeMCU can be programmed using the [Arduino IDE](https://www.arduino.cc/en/main/software) if the [driver](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) is installed. You will also need to install the 
@@ -108,7 +108,7 @@ Replace `HOSTNAME` with the hostname that you found earlier, but remove the `htt
 For the breadboard, all you will need is the NodeMCU, an LED attached to pin D6, and a resistor, which is connected to the LED on one end and grounded on the other. 
 
 #### Testing the System
-Everything should now be properly set up. Connect the Muse headset to the app, make sure the Arduino is connected to Firebase (check through the serial monitor), and try to relax. Once the threshold is passed, the LED should light up, and it should turn off when you start concentrating again. Now you have an understanding of how to use IoT technology and EEG signals to control devices!
+Everything should now be properly set up. Connect the Muse headset to the app, make sure the Arduino is connected to Firebase (check through the serial monitor) and try to relax. Once the threshold is passed, the LED should light up, and it should turn off when you start concentrating again. Now you have an understanding of how to use IoT technology and EEG signals to control devices!
 
 ## Conclusion
-Our first experience with working with neurotechnology was a very rewarding experience. Along with learning about how EEGs work, we gained valuable skills in developing Android applications, working with APIs, and using IoT devices. As we look to the future, we have many new ideas on what to work on. Because this project was a proof of concept of working with IoT devices, we could integrate this system with consumer appliances, such as Phillips Hue lightbulbs and TVs using the Chromecast API. We could also analyze other types of brainwaves and see how different combinations of brainwaves indicate different states of mind and have devices react in different ways depending on those states.
+Our first experience with working with neurotechnology provided insight into how existing EEG technologies could be integrated as consumer-minded devices. Along with learning how EEGs work, we gained valuable skills in developing Android applications, working with backend APIs, and using IoT devices. Expanding upon this current iteration of the project, We look forward to further develop our project to support consumer products such as Phillips Hue lightbulbs and Chromecast TVs. As we provided a proof of concept of working with IoT devices, we hope to analyze other types of brainwaves and see how different combinations of brainwaves indicate different states of mind. A more sophisticated level of control would enable users to control multiple devices, leading to a comprehensive realization of a brain-controlled modern smart home.
